@@ -337,7 +337,7 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(34, 593);
+            this.checkBox4.Location = new System.Drawing.Point(36, 582);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(160, 22);
             this.checkBox4.TabIndex = 22;
@@ -348,7 +348,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(204, 593);
+            this.label13.Location = new System.Drawing.Point(206, 582);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 18);
             this.label13.TabIndex = 23;
@@ -375,7 +375,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(412, 596);
+            this.label15.Location = new System.Drawing.Point(414, 585);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 18);
             this.label15.TabIndex = 15;
@@ -407,7 +407,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(295, 592);
+            this.textBox6.Location = new System.Drawing.Point(297, 581);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(103, 22);
             this.textBox6.TabIndex = 28;
@@ -447,7 +447,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(643, 85);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(451, 529);
+            this.groupBox3.Size = new System.Drawing.Size(451, 519);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ข้อมูลการชำระเงิน";
@@ -793,7 +793,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::CSQuizProject01.Properties.Resources.cancel;
-            this.button1.Location = new System.Drawing.Point(501, 532);
+            this.button1.Location = new System.Drawing.Point(501, 522);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 82);
             this.button1.TabIndex = 30;

@@ -41,5 +41,10 @@ namespace CSQuizProject01
         {
 
         }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
