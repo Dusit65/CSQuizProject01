@@ -46,7 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbbTypeUsing = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btStart = new System.Windows.Forms.Button();
+            this.btNew = new System.Windows.Forms.Button();
             this.btCal = new System.Windows.Forms.Button();
             this.cbAccept = new System.Windows.Forms.CheckBox();
             this.dbtExit = new System.Windows.Forms.Button();
@@ -115,7 +115,6 @@
             this.rdNormal.TabIndex = 10;
             this.rdNormal.Text = "บุคคลทั่วไป ไม่มีส่วนลด";
             this.rdNormal.UseVisualStyleBackColor = true;
-            
             // 
             // rdStudent
             // 
@@ -171,12 +170,14 @@
             // 
             // mtbIDcard
             // 
-            this.mtbIDcard.Location = new System.Drawing.Point(346, 38);
+            this.mtbIDcard.Location = new System.Drawing.Point(335, 38);
             this.mtbIDcard.Margin = new System.Windows.Forms.Padding(2);
             this.mtbIDcard.Mask = "0-0000-00000-00-0";
             this.mtbIDcard.Name = "mtbIDcard";
-            this.mtbIDcard.Size = new System.Drawing.Size(104, 21);
+            this.mtbIDcard.Size = new System.Drawing.Size(116, 21);
             this.mtbIDcard.TabIndex = 4;
+            this.mtbIDcard.Click += new System.EventHandler(this.mtbIDcard_Click);
+            this.mtbIDcard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbIDcard_KeyPress);
             // 
             // label2
             // 
@@ -194,7 +195,6 @@
             this.cldUsing.Margin = new System.Windows.Forms.Padding(7);
             this.cldUsing.Name = "cldUsing";
             this.cldUsing.TabIndex = 2;
-            
             // 
             // HeadLabel
             // 
@@ -207,7 +207,6 @@
             this.HeadLabel.Size = new System.Drawing.Size(248, 29);
             this.HeadLabel.TabIndex = 1;
             this.HeadLabel.Text = "โปรแกรม Internet Cafe";
-       
             // 
             // groupBox2
             // 
@@ -243,6 +242,7 @@
             this.tbAmountUsing.Name = "tbAmountUsing";
             this.tbAmountUsing.Size = new System.Drawing.Size(126, 21);
             this.tbAmountUsing.TabIndex = 12;
+            this.tbAmountUsing.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbAmountUsing_KeyPress);
             // 
             // label7
             // 
@@ -253,7 +253,6 @@
             this.label7.Size = new System.Drawing.Size(102, 15);
             this.label7.TabIndex = 14;
             this.label7.Text = "จำนวนการใช้บริการ";
-          
             // 
             // cbbTypeUsing
             // 
@@ -280,17 +279,18 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "ประเภทการใช้บริการ";
             // 
-            // btStart
+            // btNew
             // 
-            this.btStart.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btStart.Location = new System.Drawing.Point(368, 366);
-            this.btStart.Margin = new System.Windows.Forms.Padding(2);
-            this.btStart.Name = "btStart";
-            this.btStart.Size = new System.Drawing.Size(170, 28);
-            this.btStart.TabIndex = 3;
-            this.btStart.Text = "เริ่มใหม่";
-            this.btStart.UseVisualStyleBackColor = false;
+            this.btNew.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNew.Location = new System.Drawing.Point(368, 366);
+            this.btNew.Margin = new System.Windows.Forms.Padding(2);
+            this.btNew.Name = "btNew";
+            this.btNew.Size = new System.Drawing.Size(170, 28);
+            this.btNew.TabIndex = 3;
+            this.btNew.Text = "เริ่มใหม่";
+            this.btNew.UseVisualStyleBackColor = false;
+            this.btNew.Click += new System.EventHandler(this.btNew_Click);
             // 
             // btCal
             // 
@@ -303,6 +303,7 @@
             this.btCal.TabIndex = 4;
             this.btCal.Text = "คำนวณ";
             this.btCal.UseVisualStyleBackColor = false;
+            this.btCal.Click += new System.EventHandler(this.btCal_Click);
             // 
             // cbAccept
             // 
@@ -315,7 +316,6 @@
             this.cbAccept.TabIndex = 5;
             this.cbAccept.Text = "ยืนยันชำระเงิน";
             this.cbAccept.UseVisualStyleBackColor = true;
-           
             // 
             // dbtExit
             // 
@@ -328,6 +328,7 @@
             this.dbtExit.TabIndex = 6;
             this.dbtExit.Text = "จบโปรแกรม";
             this.dbtExit.UseVisualStyleBackColor = false;
+            this.dbtExit.Click += new System.EventHandler(this.dbtExit_Click);
             // 
             // groupBox3
             // 
@@ -378,14 +379,13 @@
             this.lbShowTotal.TabIndex = 23;
             this.lbShowTotal.Text = "00.00";
             this.lbShowTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // lbShowAmountUsing
             // 
             this.lbShowAmountUsing.BackColor = System.Drawing.Color.Aqua;
             this.lbShowAmountUsing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowAmountUsing.ForeColor = System.Drawing.Color.Red;
-            this.lbShowAmountUsing.Location = new System.Drawing.Point(120, 260);
+            this.lbShowAmountUsing.Location = new System.Drawing.Point(122, 260);
             this.lbShowAmountUsing.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowAmountUsing.Name = "lbShowAmountUsing";
             this.lbShowAmountUsing.Size = new System.Drawing.Size(170, 20);
@@ -397,7 +397,7 @@
             this.lbShowTypeUsing.BackColor = System.Drawing.Color.Aqua;
             this.lbShowTypeUsing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowTypeUsing.ForeColor = System.Drawing.Color.Red;
-            this.lbShowTypeUsing.Location = new System.Drawing.Point(116, 222);
+            this.lbShowTypeUsing.Location = new System.Drawing.Point(122, 222);
             this.lbShowTypeUsing.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowTypeUsing.Name = "lbShowTypeUsing";
             this.lbShowTypeUsing.Size = new System.Drawing.Size(170, 20);
@@ -409,7 +409,7 @@
             this.lbShowTypeMember.BackColor = System.Drawing.Color.Aqua;
             this.lbShowTypeMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowTypeMember.ForeColor = System.Drawing.Color.Red;
-            this.lbShowTypeMember.Location = new System.Drawing.Point(116, 180);
+            this.lbShowTypeMember.Location = new System.Drawing.Point(122, 179);
             this.lbShowTypeMember.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowTypeMember.Name = "lbShowTypeMember";
             this.lbShowTypeMember.Size = new System.Drawing.Size(170, 20);
@@ -421,7 +421,7 @@
             this.lbShowFullname.BackColor = System.Drawing.Color.Aqua;
             this.lbShowFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowFullname.ForeColor = System.Drawing.Color.Red;
-            this.lbShowFullname.Location = new System.Drawing.Point(116, 142);
+            this.lbShowFullname.Location = new System.Drawing.Point(122, 142);
             this.lbShowFullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowFullname.Name = "lbShowFullname";
             this.lbShowFullname.Size = new System.Drawing.Size(170, 20);
@@ -433,7 +433,7 @@
             this.lbShowIDcard.BackColor = System.Drawing.Color.Aqua;
             this.lbShowIDcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowIDcard.ForeColor = System.Drawing.Color.Red;
-            this.lbShowIDcard.Location = new System.Drawing.Point(116, 106);
+            this.lbShowIDcard.Location = new System.Drawing.Point(122, 106);
             this.lbShowIDcard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowIDcard.Name = "lbShowIDcard";
             this.lbShowIDcard.Size = new System.Drawing.Size(170, 19);
@@ -445,7 +445,7 @@
             this.lbShowUsingDate.BackColor = System.Drawing.Color.Aqua;
             this.lbShowUsingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowUsingDate.ForeColor = System.Drawing.Color.Red;
-            this.lbShowUsingDate.Location = new System.Drawing.Point(116, 64);
+            this.lbShowUsingDate.Location = new System.Drawing.Point(122, 68);
             this.lbShowUsingDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowUsingDate.Name = "lbShowUsingDate";
             this.lbShowUsingDate.Size = new System.Drawing.Size(170, 19);
@@ -544,7 +544,7 @@
             this.Controls.Add(this.dbtExit);
             this.Controls.Add(this.cbAccept);
             this.Controls.Add(this.btCal);
-            this.Controls.Add(this.btStart);
+            this.Controls.Add(this.btNew);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.HeadLabel);
             this.Controls.Add(this.groupBox1);
@@ -586,7 +586,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbAmountUsing;
-        private System.Windows.Forms.Button btStart;
+        private System.Windows.Forms.Button btNew;
         private System.Windows.Forms.Button btCal;
         private System.Windows.Forms.CheckBox cbAccept;
         private System.Windows.Forms.Button dbtExit;
