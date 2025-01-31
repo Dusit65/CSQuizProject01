@@ -93,6 +93,7 @@
             this.lbShowPayDate = new System.Windows.Forms.Label();
             this.btCal = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
+            this.btGoInternetCafe = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -218,8 +219,9 @@
             this.mtbIDcard.Margin = new System.Windows.Forms.Padding(2);
             this.mtbIDcard.Mask = "0-0000-00000-00-0";
             this.mtbIDcard.Name = "mtbIDcard";
-            this.mtbIDcard.Size = new System.Drawing.Size(104, 21);
+            this.mtbIDcard.Size = new System.Drawing.Size(111, 21);
             this.mtbIDcard.TabIndex = 4;
+            this.mtbIDcard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbIDcard_KeyPress);
             // 
             // label2
             // 
@@ -261,12 +263,13 @@
             this.cbPhone.TabIndex = 14;
             this.cbPhone.Text = "โทรศัพท์ (นาทีละ1.50)";
             this.cbPhone.UseVisualStyleBackColor = true;
+            this.cbPhone.Click += new System.EventHandler(this.cbPhone_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(310, 357);
+            this.label7.Location = new System.Drawing.Point(324, 354);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 15);
@@ -297,20 +300,21 @@
             this.cbbType.Location = new System.Drawing.Point(118, 303);
             this.cbbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbbType.Name = "cbbType";
-            this.cbbType.Size = new System.Drawing.Size(134, 23);
+            this.cbbType.Size = new System.Drawing.Size(181, 23);
             this.cbbType.TabIndex = 16;
             // 
             // cbInternet
             // 
             this.cbInternet.AutoSize = true;
             this.cbInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInternet.Location = new System.Drawing.Point(26, 398);
+            this.cbInternet.Location = new System.Drawing.Point(26, 395);
             this.cbInternet.Margin = new System.Windows.Forms.Padding(2);
             this.cbInternet.Name = "cbInternet";
             this.cbInternet.Size = new System.Drawing.Size(150, 19);
             this.cbInternet.TabIndex = 17;
             this.cbInternet.Text = "อินเตอร์เน็ต (นาทีละ0.50)";
             this.cbInternet.UseVisualStyleBackColor = true;
+            this.cbInternet.Click += new System.EventHandler(this.cbInternet_Click);
             // 
             // cbWater
             // 
@@ -323,12 +327,13 @@
             this.cbWater.TabIndex = 18;
             this.cbWater.Text = "น้ำ (หน่วยละ12.50)";
             this.cbWater.UseVisualStyleBackColor = true;
+            this.cbWater.Click += new System.EventHandler(this.cbWater_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(153, 354);
+            this.label10.Location = new System.Drawing.Point(178, 354);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 15);
@@ -339,7 +344,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(153, 399);
+            this.label11.Location = new System.Drawing.Point(178, 398);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 15);
@@ -350,7 +355,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(152, 438);
+            this.label12.Location = new System.Drawing.Point(178, 439);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(60, 15);
@@ -368,12 +373,13 @@
             this.cbElectric.TabIndex = 22;
             this.cbElectric.Text = "ไฟฟ้า (หน่วยละ12.50)";
             this.cbElectric.UseVisualStyleBackColor = true;
+            this.cbElectric.Click += new System.EventHandler(this.cbElectric_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(154, 473);
+            this.label13.Location = new System.Drawing.Point(178, 474);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 15);
@@ -382,17 +388,18 @@
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(221, 353);
+            this.tbPhone.Location = new System.Drawing.Point(242, 353);
             this.tbPhone.Margin = new System.Windows.Forms.Padding(2);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(78, 20);
             this.tbPhone.TabIndex = 13;
+            this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(310, 401);
+            this.label14.Location = new System.Drawing.Point(324, 395);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(27, 15);
@@ -403,7 +410,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(310, 475);
+            this.label15.Location = new System.Drawing.Point(324, 472);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(35, 15);
@@ -414,7 +421,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(310, 440);
+            this.label16.Location = new System.Drawing.Point(324, 433);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(35, 15);
@@ -423,27 +430,30 @@
             // 
             // tbInternet
             // 
-            this.tbInternet.Location = new System.Drawing.Point(221, 398);
+            this.tbInternet.Location = new System.Drawing.Point(242, 396);
             this.tbInternet.Margin = new System.Windows.Forms.Padding(2);
             this.tbInternet.Name = "tbInternet";
             this.tbInternet.Size = new System.Drawing.Size(78, 20);
             this.tbInternet.TabIndex = 26;
+            this.tbInternet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInternet_KeyPress);
             // 
             // tbWater
             // 
-            this.tbWater.Location = new System.Drawing.Point(221, 436);
+            this.tbWater.Location = new System.Drawing.Point(242, 435);
             this.tbWater.Margin = new System.Windows.Forms.Padding(2);
             this.tbWater.Name = "tbWater";
             this.tbWater.Size = new System.Drawing.Size(78, 20);
             this.tbWater.TabIndex = 27;
+            this.tbWater.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbWater_KeyPress);
             // 
             // tbElectric
             // 
-            this.tbElectric.Location = new System.Drawing.Point(223, 472);
+            this.tbElectric.Location = new System.Drawing.Point(242, 472);
             this.tbElectric.Margin = new System.Windows.Forms.Padding(2);
             this.tbElectric.Name = "tbElectric";
             this.tbElectric.Size = new System.Drawing.Size(78, 20);
             this.tbElectric.TabIndex = 28;
+            this.tbElectric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbElectric_KeyPress);
             // 
             // groupBox3
             // 
@@ -482,7 +492,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(338, 422);
+            this.groupBox3.Size = new System.Drawing.Size(338, 431);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ข้อมูลการชำระเงิน";
@@ -491,7 +501,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(116, 326);
+            this.label42.Location = new System.Drawing.Point(115, 329);
             this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(124, 18);
@@ -534,7 +544,7 @@
             // lbShowPayElectric
             // 
             this.lbShowPayElectric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowPayElectric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowPayElectric.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPayElectric.ForeColor = System.Drawing.Color.Red;
             this.lbShowPayElectric.Location = new System.Drawing.Point(224, 279);
             this.lbShowPayElectric.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -547,7 +557,7 @@
             // lbShowElectric
             // 
             this.lbShowElectric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowElectric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowElectric.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowElectric.ForeColor = System.Drawing.Color.Red;
             this.lbShowElectric.Location = new System.Drawing.Point(74, 279);
             this.lbShowElectric.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -593,7 +603,7 @@
             // lbShowPayWater
             // 
             this.lbShowPayWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowPayWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowPayWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPayWater.ForeColor = System.Drawing.Color.Red;
             this.lbShowPayWater.Location = new System.Drawing.Point(224, 239);
             this.lbShowPayWater.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -606,7 +616,7 @@
             // lbShowWater
             // 
             this.lbShowWater.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowWater.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowWater.ForeColor = System.Drawing.Color.Red;
             this.lbShowWater.Location = new System.Drawing.Point(74, 239);
             this.lbShowWater.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -652,7 +662,7 @@
             // lbShowPayInternet
             // 
             this.lbShowPayInternet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowPayInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowPayInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPayInternet.ForeColor = System.Drawing.Color.Red;
             this.lbShowPayInternet.Location = new System.Drawing.Point(224, 195);
             this.lbShowPayInternet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -665,7 +675,7 @@
             // lbShowInternet
             // 
             this.lbShowInternet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowInternet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowInternet.ForeColor = System.Drawing.Color.Red;
             this.lbShowInternet.Location = new System.Drawing.Point(76, 193);
             this.lbShowInternet.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -700,7 +710,7 @@
             // lbShowPayPhone
             // 
             this.lbShowPayPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowPayPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowPayPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPayPhone.ForeColor = System.Drawing.Color.Red;
             this.lbShowPayPhone.Location = new System.Drawing.Point(224, 155);
             this.lbShowPayPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -713,7 +723,7 @@
             // lbShowPhone
             // 
             this.lbShowPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPhone.ForeColor = System.Drawing.Color.Red;
             this.lbShowPhone.Location = new System.Drawing.Point(76, 155);
             this.lbShowPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -750,7 +760,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(-46, 114);
+            this.label19.Location = new System.Drawing.Point(28, 110);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 15);
@@ -817,7 +827,7 @@
             this.lbShowPayTotal.BackColor = System.Drawing.Color.SpringGreen;
             this.lbShowPayTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPayTotal.ForeColor = System.Drawing.Color.Red;
-            this.lbShowPayTotal.Location = new System.Drawing.Point(49, 358);
+            this.lbShowPayTotal.Location = new System.Drawing.Point(48, 375);
             this.lbShowPayTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShowPayTotal.Name = "lbShowPayTotal";
             this.lbShowPayTotal.Size = new System.Drawing.Size(255, 38);
@@ -850,13 +860,14 @@
             this.btCal.Text = "คำนวณ";
             this.btCal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btCal.UseVisualStyleBackColor = false;
+            this.btCal.Click += new System.EventHandler(this.btCal_Click);
             // 
             // btCancel
             // 
             this.btCancel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancel.Image = global::CSQuizProject01.Properties.Resources.cancel;
-            this.btCancel.Location = new System.Drawing.Point(376, 424);
+            this.btCancel.Location = new System.Drawing.Point(376, 433);
             this.btCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(71, 67);
@@ -864,12 +875,24 @@
             this.btCancel.Text = " ยกเลิก";
             this.btCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btCancel.UseVisualStyleBackColor = false;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
+            // 
+            // btGoInternetCafe
+            // 
+            this.btGoInternetCafe.Location = new System.Drawing.Point(755, 14);
+            this.btGoInternetCafe.Name = "btGoInternetCafe";
+            this.btGoInternetCafe.Size = new System.Drawing.Size(75, 23);
+            this.btGoInternetCafe.TabIndex = 32;
+            this.btGoInternetCafe.Text = "InternetCafe";
+            this.btGoInternetCafe.UseVisualStyleBackColor = true;
+            this.btGoInternetCafe.Click += new System.EventHandler(this.btGoInternetCafe_Click);
             // 
             // FrmRentRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 526);
+            this.Controls.Add(this.btGoInternetCafe);
             this.Controls.Add(this.btCal);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.groupBox3);
@@ -977,5 +1000,6 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btCal;
+        private System.Windows.Forms.Button btGoInternetCafe;
     }
 }
