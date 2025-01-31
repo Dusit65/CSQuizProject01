@@ -34,7 +34,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.rdMr = new System.Windows.Forms.RadioButton();
             this.rdMrs = new System.Windows.Forms.RadioButton();
-            this.rdMisss = new System.Windows.Forms.RadioButton();
+            this.rdMiss = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.tbSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.rdMr);
             this.groupBox1.Controls.Add(this.rdMrs);
-            this.groupBox1.Controls.Add(this.rdMisss);
+            this.groupBox1.Controls.Add(this.rdMiss);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.tbSurname);
             this.groupBox1.Controls.Add(this.label3);
@@ -174,16 +174,16 @@
             this.rdMrs.Text = "นาง";
             this.rdMrs.UseVisualStyleBackColor = true;
             // 
-            // rdMisss
+            // rdMiss
             // 
-            this.rdMisss.AutoSize = true;
-            this.rdMisss.Location = new System.Drawing.Point(194, 69);
-            this.rdMisss.Margin = new System.Windows.Forms.Padding(2);
-            this.rdMisss.Name = "rdMisss";
-            this.rdMisss.Size = new System.Drawing.Size(60, 19);
-            this.rdMisss.TabIndex = 8;
-            this.rdMisss.Text = "นางสาว";
-            this.rdMisss.UseVisualStyleBackColor = true;
+            this.rdMiss.AutoSize = true;
+            this.rdMiss.Location = new System.Drawing.Point(194, 69);
+            this.rdMiss.Margin = new System.Windows.Forms.Padding(2);
+            this.rdMiss.Name = "rdMiss";
+            this.rdMiss.Size = new System.Drawing.Size(60, 19);
+            this.rdMiss.TabIndex = 8;
+            this.rdMiss.Text = "นางสาว";
+            this.rdMiss.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -303,6 +303,7 @@
             this.cbbType.Name = "cbbType";
             this.cbbType.Size = new System.Drawing.Size(181, 23);
             this.cbbType.TabIndex = 16;
+            this.cbbType.SelectedIndexChanged += new System.EventHandler(this.cbbType_SelectedIndexChanged);
             // 
             // cbInternet
             // 
@@ -395,7 +396,6 @@
             this.tbPhone.Size = new System.Drawing.Size(78, 20);
             this.tbPhone.TabIndex = 13;
             this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
-            this.tbPhone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbPhone_KeyUp);
             // 
             // label14
             // 
@@ -438,7 +438,6 @@
             this.tbInternet.Size = new System.Drawing.Size(78, 20);
             this.tbInternet.TabIndex = 26;
             this.tbInternet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInternet_KeyPress);
-            this.tbInternet.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbInternet_KeyUp);
             // 
             // tbWater
             // 
@@ -448,7 +447,6 @@
             this.tbWater.Size = new System.Drawing.Size(78, 20);
             this.tbWater.TabIndex = 27;
             this.tbWater.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbWater_KeyPress);
-            this.tbWater.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbWater_KeyUp);
             // 
             // tbElectric
             // 
@@ -458,7 +456,6 @@
             this.tbElectric.Size = new System.Drawing.Size(78, 20);
             this.tbElectric.TabIndex = 28;
             this.tbElectric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbElectric_KeyPress);
-            this.tbElectric.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbElectric_KeyUp);
             // 
             // groupBox3
             // 
@@ -752,7 +749,7 @@
             // lbShowType
             // 
             this.lbShowType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowType.ForeColor = System.Drawing.Color.Red;
             this.lbShowType.Location = new System.Drawing.Point(125, 110);
             this.lbShowType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -775,7 +772,7 @@
             // lbShowFullname
             // 
             this.lbShowFullname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowFullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowFullname.ForeColor = System.Drawing.Color.Red;
             this.lbShowFullname.Location = new System.Drawing.Point(125, 80);
             this.lbShowFullname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -787,7 +784,7 @@
             // lbShowIDcard
             // 
             this.lbShowIDcard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowIDcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowIDcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowIDcard.ForeColor = System.Drawing.Color.Red;
             this.lbShowIDcard.Location = new System.Drawing.Point(125, 53);
             this.lbShowIDcard.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -843,7 +840,7 @@
             // lbShowPayDate
             // 
             this.lbShowPayDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbShowPayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowPayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbShowPayDate.ForeColor = System.Drawing.Color.Red;
             this.lbShowPayDate.Location = new System.Drawing.Point(125, 27);
             this.lbShowPayDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -944,7 +941,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdMr;
         private System.Windows.Forms.RadioButton rdMrs;
-        private System.Windows.Forms.RadioButton rdMisss;
+        private System.Windows.Forms.RadioButton rdMiss;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbSurname;
         private System.Windows.Forms.Label label3;

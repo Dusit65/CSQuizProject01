@@ -135,6 +135,21 @@ namespace CSQuizProject01
                 // Create Variable and Calculate 
                 string selectedType = cbbType.SelectedItem?.ToString();
                 string payDate = dtpPayDate.Value.ToString("วันที่ d MMMM พ.ศ. yyyy", new CultureInfo("th-TH"));
+                int buddhistYear = dtpPayDate.Value.Year + 543; // แปลง ค.ศ. เป็น พ.ศ.
+                payDate = payDate.Replace(dtpPayDate.Value.Year.ToString(), buddhistYear.ToString());
+                string prefix = "";
+                if (rdMr.Checked)
+                {
+                    prefix = "นาย";
+                }
+                else if (rdMrs.Checked)
+                {
+                    prefix = "นาง";
+                }
+                else if (rdMiss.Checked)
+                {
+                    prefix = "นางสาว";
+                }
                 //Phone Internet Water and Electric Calculate====================================
                 if (tbPhone.Text.Length > 0)
                 {
@@ -201,14 +216,29 @@ namespace CSQuizProject01
                 double.Parse(lbShowPayPhone.Text) +
                 double.Parse(lbShowPayInternet.Text) +
                 double.Parse(lbShowPayWater.Text) +
-                double.Parse(lbShowPayElectric.Text) ;
-
+                double.Parse(lbShowPayElectric.Text); 
                 // Display results
+
                 lbShowPayDate.Text = payDate;
                 lbShowIDcard.Text = mtbIDcard.Text;
-                lbShowFullname.Text = $"{tbFirstname.Text} {tbSurname.Text}";
+                lbShowFullname.Text = $"{prefix} {tbFirstname.Text} {tbSurname.Text}".Trim();
                 lbShowType.Text = selectedType;
-
+                if (cbbType.SelectedIndex == 0)
+                {
+                    totalPay = totalPay + 4500;
+                }
+                else if (cbbType.SelectedIndex == 1)
+                {
+                    totalPay = totalPay + 4000;
+                }
+                else if (cbbType.SelectedIndex == 2)
+                {
+                    totalPay = totalPay + 3500;
+                }
+                else
+                {
+                    totalPay =  totalPay + 3000;
+                }
                 lbShowPayTotal.Text = totalPay.ToString("#,###,##0.00");
             }
 
@@ -228,7 +258,7 @@ namespace CSQuizProject01
             tbInternet.Enabled = false;
             tbWater.Enabled = false;
             tbElectric.Enabled = false;
-            cbbType.SelectedIndex = 1;
+            cbbType.SelectedIndex = 0;
             cbPhone.Checked = false;
             cbInternet.Checked = false;
             cbWater.Checked = false;
@@ -251,6 +281,11 @@ namespace CSQuizProject01
         private void mtbIDcard_Click(object sender, EventArgs e)
         {
             mtbIDcard.SelectionStart = 0; //Cursor start at first block
+        }
+
+        private void cbbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
