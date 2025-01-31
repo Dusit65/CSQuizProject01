@@ -66,6 +66,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btGoRentRoom = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -114,7 +115,7 @@
             this.rdNormal.TabIndex = 10;
             this.rdNormal.Text = "บุคคลทั่วไป ไม่มีส่วนลด";
             this.rdNormal.UseVisualStyleBackColor = true;
-            this.rdNormal.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            
             // 
             // rdStudent
             // 
@@ -193,7 +194,7 @@
             this.cldUsing.Margin = new System.Windows.Forms.Padding(7);
             this.cldUsing.Name = "cldUsing";
             this.cldUsing.TabIndex = 2;
-            this.cldUsing.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            
             // 
             // HeadLabel
             // 
@@ -206,7 +207,7 @@
             this.HeadLabel.Size = new System.Drawing.Size(248, 29);
             this.HeadLabel.TabIndex = 1;
             this.HeadLabel.Text = "โปรแกรม Internet Cafe";
-            this.HeadLabel.Click += new System.EventHandler(this.label1_Click);
+       
             // 
             // groupBox2
             // 
@@ -252,7 +253,7 @@
             this.label7.Size = new System.Drawing.Size(102, 15);
             this.label7.TabIndex = 14;
             this.label7.Text = "จำนวนการใช้บริการ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+          
             // 
             // cbbTypeUsing
             // 
@@ -314,7 +315,7 @@
             this.cbAccept.TabIndex = 5;
             this.cbAccept.Text = "ยืนยันชำระเงิน";
             this.cbAccept.UseVisualStyleBackColor = true;
-            this.cbAccept.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+           
             // 
             // dbtExit
             // 
@@ -377,7 +378,7 @@
             this.lbShowTotal.TabIndex = 23;
             this.lbShowTotal.Text = "00.00";
             this.lbShowTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbShowTotal.Click += new System.EventHandler(this.label22_Click);
+            
             // 
             // lbShowAmountUsing
             // 
@@ -523,11 +524,22 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "ข้อมูลการชำระเงิน";
             // 
+            // btGoRentRoom
+            // 
+            this.btGoRentRoom.Location = new System.Drawing.Point(808, 12);
+            this.btGoRentRoom.Name = "btGoRentRoom";
+            this.btGoRentRoom.Size = new System.Drawing.Size(75, 23);
+            this.btGoRentRoom.TabIndex = 33;
+            this.btGoRentRoom.Text = "RentRoom";
+            this.btGoRentRoom.UseVisualStyleBackColor = true;
+            this.btGoRentRoom.Click += new System.EventHandler(this.btGoRentRoom_Click);
+            // 
             // FrmInternetCafe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 569);
+            this.Controls.Add(this.btGoRentRoom);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dbtExit);
             this.Controls.Add(this.cbAccept);
@@ -540,6 +552,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInternetCafe";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "โปรแกรม Quiz1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -593,6 +606,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btGoRentRoom;
     }
 }
 

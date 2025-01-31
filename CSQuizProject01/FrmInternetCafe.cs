@@ -16,35 +16,11 @@ namespace CSQuizProject01
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void btGoRentRoom_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
+            FrmRentRoom frmRentRoom = new FrmRentRoom();
+            frmRentRoom.Show();
+            Hide();
         }
     }
 }
