@@ -16,7 +16,7 @@ namespace CSQuizProject01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInternetCafe());
+            Application.Run(new FrmRentRoom());
         }
     }
 }
