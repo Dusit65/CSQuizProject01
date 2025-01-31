@@ -30,145 +30,7 @@ namespace CSQuizProject01
                 e.Handled = true; // ปฏิเสธการพิมพ์ตัวอื่นที่ไม่ใช่ตัวเลข
             }
         }
- //bt Function=========================================================
-        //btInternetCafe
-        private void btGoInternetCafe_Click(object sender, EventArgs e)
-        {
-            FrmInternetCafe frmInternetCafe = new FrmInternetCafe();
-            frmInternetCafe.Show();
-            Hide();
-        }
-        //btCal
-        private void btCal_Click(object sender, EventArgs e)
-        {
-            // Validate every tb data
-            if (!mtbIDcard.MaskCompleted)
-            {
-                ShareData.showWarningMSG("ป้อนเลขประจำตัวประชาชนด้วย");
-            }
-            else if (string.IsNullOrWhiteSpace(tbFirstname.Text))
-            {
-                ShareData.showWarningMSG("ป้อนชื่อด้วย");
-            }
-            else if (string.IsNullOrWhiteSpace(tbSurname.Text))
-            {
-                ShareData.showWarningMSG("ป้อนนามสกุลด้วย");
-            }
-            else
-            {
-                // Create Variable and Calculate 
-                string selectedType = cbbType.SelectedItem?.ToString();
-                string payDate = dtpPayDate.Value.ToString("วันที่ d MMMM พ.ศ. yyyy", new CultureInfo("th-TH"));
-
-                double totalPayPhone = 0, totalPayInternet = 0, totalPayWater = 0, totalPayElectric = 0;
-
-                // ตรวจสอบและคำนวณค่าโทรศัพท์
-                if (double.TryParse(tbPhone.Text, out double phoneValue))
-                {
-                    totalPayPhone = phoneValue < 1 ? 0 : phoneValue * 1.50;
-                }
-
-                // ตรวจสอบและคำนวณค่าอินเทอร์เน็ต
-                if (double.TryParse(tbInternet.Text, out double internetValue))
-                {
-                    totalPayInternet = internetValue < 1 ? 0 : internetValue * 0.5;
-                }
-
-                // ตรวจสอบและคำนวณค่าน้ำ
-                if (double.TryParse(tbWater.Text, out double waterValue))
-                {
-                    totalPayWater = waterValue < 1 ? 0 : waterValue * 12.50;
-                }
-
-                // ตรวจสอบและคำนวณค่าไฟฟ้า
-                if (double.TryParse(tbElectric.Text, out double electricValue))
-                {
-                    totalPayElectric = electricValue < 1 ? 0 : electricValue * 12.50;
-                }
-
-                // คำนวณยอดรวมทั้งหมด
-                double totalPay = totalPayPhone + totalPayInternet + totalPayWater + totalPayElectric;
-
-                // Display results
-                lbShowPayDate.Text = payDate;
-                lbShowIDcard.Text = mtbIDcard.Text;
-                lbShowFullname.Text = $"{tbFirstname.Text} {tbSurname.Text}";
-                lbShowType.Text = selectedType;
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                lbShowPhone.Text = tbPhone.Text;
-                lbShowInternet.Text = tbInternet.Text.ToString();
-                lbShowWater.Text = tbWater.Text.ToString();
-                lbShowElectric.Text = tbElectric.Text.ToString();
-
-                lbShowPayPhone.Text = totalPayPhone.ToString("#,###,##0.00");
-                lbShowPayInternet.Text = totalPayInternet.ToString("#,###,##0.00");
-                lbShowPayWater.Text = totalPayWater.ToString("#,###,##0.00");
-                lbShowPayElectric.Text = totalPayElectric.ToString("#,###,##0.00");
-
-                lbShowPayTotal.Text = totalPay.ToString("#,###,##0.00");
-            }
-
-        }
-        //btCancel
-        private void btCancel_Click(object sender, EventArgs e)
-        {
-            mtbIDcard.Clear();
-            rdMr.Checked = true;
-            tbFirstname.Clear();
-            tbSurname.Clear();
-            tbPhone.Clear();
-            tbInternet.Clear();
-            tbWater.Clear();
-            tbElectric.Clear();
-            tbPhone.Enabled = false;
-            tbInternet.Enabled = false;
-            tbWater.Enabled = false;
-            tbElectric.Enabled = false;
-            cbbType.SelectedIndex = 1;
-            cbPhone.Checked = false;
-            cbInternet.Checked = false;
-            cbWater.Checked = false;
-            cbElectric.Checked = false;
-            lbShowPayDate.Text = "-";
-            lbShowIDcard.Text = "-";
-            lbShowFullname.Text = "-";
-            lbShowType.Text = "-";
-            lbShowPhone.Text = "0";
-            lbShowInternet.Text = "0";
-            lbShowWater.Text = "0";
-            lbShowElectric.Text = "0";
-            lbShowPayPhone.Text = "0.00";
-            lbShowPayInternet.Text = "0.00";
-            lbShowPayWater.Text = "0.00";
-            lbShowPayElectric.Text = "0.00";
-            lbShowPayTotal.Text = "0.00";
-        }
-//Keypress============================================================
-        private void mtbIDcard_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            keyNumberOnly(sender, e);
-        }
-
-        private void tbPhone_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            keyNumberOnly(sender, e);
-        }
-
-        private void tbInternet_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            keyNumberOnly(sender, e);
-        }
-
-        private void tbWater_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            keyNumberOnly(sender, e);
-        }
-
-        private void tbElectric_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            keyNumberOnly(sender, e);
-        }
-//CheckBox Click=========================================================                                                                                         w
+ //CheckBox Click=========================================================   
         private void cbPhone_Click(object sender, EventArgs e)
         {
             if (cbPhone.Checked)
@@ -216,6 +78,199 @@ namespace CSQuizProject01
                 tbElectric.Clear();
                 tbElectric.Enabled = false;
             }
+        }
+
+//Keyup======================================================================
+        private void tbPhone_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void tbInternet_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void tbWater_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void tbElectric_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+//Keypress============================================================
+        private void mtbIDcard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyNumberOnly(sender, e);
+        }
+
+        private void tbPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyNumberOnly(sender, e);
+        }
+
+        private void tbInternet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyNumberOnly(sender, e);
+        }
+
+        private void tbWater_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyNumberOnly(sender, e);
+        }
+
+        private void tbElectric_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            keyNumberOnly(sender, e);
+        }
+
+//bt Function=========================================================
+        //btInternetCafe
+        private void btGoInternetCafe_Click(object sender, EventArgs e)
+        {
+            FrmInternetCafe frmInternetCafe = new FrmInternetCafe();
+            frmInternetCafe.Show();
+            Hide();
+        }
+        //btCal
+        private void btCal_Click(object sender, EventArgs e)
+        {
+            // Validate every tb data
+            if (!mtbIDcard.MaskCompleted)
+            {
+                ShareData.showWarningMSG("ป้อนเลขประจำตัวประชาชนด้วย");
+            }
+            else if (string.IsNullOrWhiteSpace(tbFirstname.Text))
+            {
+                ShareData.showWarningMSG("ป้อนชื่อด้วย");
+            }
+            else if (string.IsNullOrWhiteSpace(tbSurname.Text))
+            {
+                ShareData.showWarningMSG("ป้อนนามสกุลด้วย");
+            }
+            else
+            {
+                // Create Variable and Calculate 
+                string selectedType = cbbType.SelectedItem?.ToString();
+                string payDate = dtpPayDate.Value.ToString("วันที่ d MMMM พ.ศ. yyyy", new CultureInfo("th-TH"));
+                //Phone Internet Water and Electric Calculate====================================
+                if (tbPhone.Text.Length > 0)
+                {
+                    int minutes = int.Parse(tbPhone.Text);
+                    double totalPayPhone = 1.50 * minutes;
+                    lbShowPhone.Text = minutes.ToString("0");
+                    lbShowPayPhone.Text = totalPayPhone.ToString("#,###,##0.00");
+                }
+                else
+                {
+                    lbShowPhone.Text = "0";
+                    lbShowPayPhone.Text = ("0.00");
+                }
+                if (tbInternet.Text.Length > 0)
+                {
+                    int minutes = int.Parse(tbInternet.Text);
+                    double totalPayInternet = 0.5 * minutes;
+                    lbShowInternet.Text = minutes.ToString("0");
+                    lbShowPayInternet.Text = totalPayInternet.ToString("#,###,##0.00");
+                }
+                else
+                {
+                    lbShowInternet.Text = "0";
+                    lbShowPayInternet.Text = ("0.00");
+                }
+                if (tbWater.Text.Length > 0)
+                {
+                    int units = int.Parse(tbWater.Text);
+                    double totalPayWater = 12.5 * units;
+                    lbShowWater.Text = units.ToString("0");
+                    lbShowPayWater.Text = totalPayWater.ToString("#,###,##0.00");
+                }
+                else
+                {
+                    lbShowWater.Text = "0";
+                    lbShowPayWater.Text = ("0.00");
+                }
+                if (tbWater.Text.Length > 0)
+                {
+                    int units = int.Parse(tbWater.Text);
+                    double totalPayWater = 12.5 * units;
+                    lbShowWater.Text = units.ToString("0");
+                    lbShowPayWater.Text = totalPayWater.ToString("#,###,##0.00");
+                }
+                else
+                {
+                    lbShowWater.Text = "0";
+                    lbShowPayWater.Text = ("0.00");
+                }
+                if (tbElectric.Text.Length > 0)
+                {
+                    int units = int.Parse(tbElectric.Text);
+                    double totalPayElectric = 12.5 * units;
+                    lbShowElectric.Text = units.ToString("0");
+                    lbShowPayElectric.Text = totalPayElectric.ToString("#,###,##0.00");
+                }
+                else
+                {
+                    lbShowElectric.Text = "0";
+                    lbShowPayElectric.Text = ("0.00");
+                }
+                //Total Using Bill Display
+                double totalPay =
+                double.Parse(lbShowPayPhone.Text) +
+                double.Parse(lbShowPayInternet.Text) +
+                double.Parse(lbShowPayWater.Text) +
+                double.Parse(lbShowPayElectric.Text) ;
+
+                // Display results
+                lbShowPayDate.Text = payDate;
+                lbShowIDcard.Text = mtbIDcard.Text;
+                lbShowFullname.Text = $"{tbFirstname.Text} {tbSurname.Text}";
+                lbShowType.Text = selectedType;
+
+                lbShowPayTotal.Text = totalPay.ToString("#,###,##0.00");
+            }
+
+        }
+        //btCancel
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            mtbIDcard.Clear();
+            rdMr.Checked = true;
+            tbFirstname.Clear();
+            tbSurname.Clear();
+            tbPhone.Clear();
+            tbInternet.Clear();
+            tbWater.Clear();
+            tbElectric.Clear();
+            tbPhone.Enabled = false;
+            tbInternet.Enabled = false;
+            tbWater.Enabled = false;
+            tbElectric.Enabled = false;
+            cbbType.SelectedIndex = 1;
+            cbPhone.Checked = false;
+            cbInternet.Checked = false;
+            cbWater.Checked = false;
+            cbElectric.Checked = false;
+            lbShowPayDate.Text = "-";
+            lbShowIDcard.Text = "-";
+            lbShowFullname.Text = "-";
+            lbShowType.Text = "-";
+            lbShowPhone.Text = "0";
+            lbShowInternet.Text = "0";
+            lbShowWater.Text = "0";
+            lbShowElectric.Text = "0";
+            lbShowPayPhone.Text = "0.00";
+            lbShowPayInternet.Text = "0.00";
+            lbShowPayWater.Text = "0.00";
+            lbShowPayElectric.Text = "0.00";
+            lbShowPayTotal.Text = "0.00";
+        }
+        //Masked TextBox 
+        private void mtbIDcard_Click(object sender, EventArgs e)
+        {
+            mtbIDcard.SelectionStart = 0; //Cursor start at first block
         }
     }
 }

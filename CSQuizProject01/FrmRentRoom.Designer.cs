@@ -221,6 +221,7 @@
             this.mtbIDcard.Name = "mtbIDcard";
             this.mtbIDcard.Size = new System.Drawing.Size(111, 21);
             this.mtbIDcard.TabIndex = 4;
+            this.mtbIDcard.Click += new System.EventHandler(this.mtbIDcard_Click);
             this.mtbIDcard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbIDcard_KeyPress);
             // 
             // label2
@@ -394,6 +395,7 @@
             this.tbPhone.Size = new System.Drawing.Size(78, 20);
             this.tbPhone.TabIndex = 13;
             this.tbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhone_KeyPress);
+            this.tbPhone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbPhone_KeyUp);
             // 
             // label14
             // 
@@ -436,6 +438,7 @@
             this.tbInternet.Size = new System.Drawing.Size(78, 20);
             this.tbInternet.TabIndex = 26;
             this.tbInternet.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInternet_KeyPress);
+            this.tbInternet.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbInternet_KeyUp);
             // 
             // tbWater
             // 
@@ -445,6 +448,7 @@
             this.tbWater.Size = new System.Drawing.Size(78, 20);
             this.tbWater.TabIndex = 27;
             this.tbWater.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbWater_KeyPress);
+            this.tbWater.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbWater_KeyUp);
             // 
             // tbElectric
             // 
@@ -454,6 +458,7 @@
             this.tbElectric.Size = new System.Drawing.Size(78, 20);
             this.tbElectric.TabIndex = 28;
             this.tbElectric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbElectric_KeyPress);
+            this.tbElectric.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbElectric_KeyUp);
             // 
             // groupBox3
             // 
