@@ -80,26 +80,6 @@ namespace CSQuizProject01
             }
         }
 
-//Keyup======================================================================
-        private void tbPhone_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void tbInternet_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void tbWater_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void tbElectric_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
 //Keypress============================================================
         private void mtbIDcard_KeyPress(object sender, KeyPressEventArgs e)
         {
